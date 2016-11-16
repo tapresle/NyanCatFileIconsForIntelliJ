@@ -1,0 +1,35 @@
+<idea-plugin version="2">
+  <id>com.presley.ted.nyan.cat.file.icons</id>
+  <name>Nyan Cat File Icons</name>
+  <version>1.0</version>
+  <vendor email="tapresle92@gmail.com" url="http://www.tedpresley.info">Ted Presley</vendor>
+
+  <description><![CDATA[
+      Love Nyan Cat? Well do I have the plugin for you! <br>
+      This plugin will try to replace all of your file icons with Nyan Cat!
+    ]]></description>
+
+  <change-notes><![CDATA[
+      1.0 - Added Nyan Cat to display for most file types
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="141.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.lang</depends>
+
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <fileIconProvider implementation="NyanFileIconProvider" order="FIRST"></fileIconProvider>
+    <iconProvider implementation="NyanIconProvider" order="FIRST"></iconProvider>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
