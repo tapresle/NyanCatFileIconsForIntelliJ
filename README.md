@@ -11,3 +11,6 @@ Dear god what have I done...
 6. Click OK and restart your IDE to experience Nyan Cat in all its glory!
 
 #If you'd like to see other icons for specific file types, please open an issue!
+
+#Screenshot:
+![Example](/ExampleScreenshot.png?raw=true "Example")
