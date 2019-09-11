@@ -17,14 +17,32 @@ public class NyanIconProvider extends IconProvider {
 
         PsiFile containingFile = psiElement.getContainingFile();
 
-        if(containingFile != null)
-        {
+        if(containingFile != null) {
             VirtualFile vFile = containingFile.getVirtualFile();
             if(vFile == null) {
                 return null; // This means it's a directory
             }
 
-            return IconLoader.getIcon("nyan.png");
+            if (vFile.getExtension() == null) {
+                return IconLoader.getIcon("nyan.png");
+            }
+
+            switch (vFile.getExtension()) {
+                case "ts":
+                case "tsx":
+                case "js":
+                case "jsx":
+                   return IconLoader.getIcon("gb.png");
+                case "css":
+                case "scss":
+                case "sass":
+                case "less":
+                    return IconLoader.getIcon("pikanyan.png");
+                case "md":
+                    return IconLoader.getIcon("floppy.png");
+                default:
+                    return IconLoader.getIcon("nyan.png");
+            }
         }
 
         return null;
